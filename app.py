@@ -16,11 +16,18 @@ def about():
 def credits():
     return flask.send_file('static/credits.html')
 
+@app.route('/vars')
+def vars():
+    return flask.send_file('static/vars.html')
+
+@app.route('/jquery')
+def query():
+    return flask.send_file('jquery/jquery.html')
+
 @app.route('/vars/<num>')
 def routenumber(num):
     output = "You chose the number " + str(num) + ", which is 1 more than " + str(int(num) - 1)
     output += "<br><a href= '/vars'>Return</a>"
     return output
 
-if __name__ == "__main__":
-    app.run()
+app.run()
