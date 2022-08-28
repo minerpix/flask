@@ -22,7 +22,7 @@ def vars():
 
 @app.route('/jquery')
 def query():
-    return flask.send_file('jquery/jquery.html')
+    return flask.send_file('static/jquery.html')
 
 @app.route('/vars/<num>')
 def routenumber(num):
